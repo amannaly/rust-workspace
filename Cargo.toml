@@ -1,0 +1,6 @@
+[package]
+name = "workspace"
+version = "0.1.0"
+authors = ["Arjun Mannaly <a.mannaly@gmail.com>"]
+
+[dependencies]
