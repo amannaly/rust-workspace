@@ -1,15 +1,14 @@
 pub fn sort(array: &mut [i32]) {
     let length = array.len()-1;
-    _sort(array, 0, length);
+    sort_helper(array, 0, length);
 }
 
-fn _sort(array: &mut [i32], start: usize, end: usize) {
+fn sort_helper(array: &mut [i32], start: usize, end: usize) {
 
     if start < end {
-
         let p =  partition(array, start, end);
-        _sort(array, start, p-1);
-        _sort(array, p+1, end);
+        sort_helper(array, start, p-1);
+        sort_helper(array, p+1, end);
     }
 }
 
@@ -17,6 +16,7 @@ fn partition(array: &mut [i32], start: usize, end: usize) -> usize {
 
     let pivot = array[end];
     let mut p = end;
+    
     for i in (start..end).rev() {
 
         if array[i] >= pivot {
